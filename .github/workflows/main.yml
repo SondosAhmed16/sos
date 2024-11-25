@@ -18,6 +18,8 @@ jobs:
         run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.DOCKER_PASSWORD}}
       - name: "build img"
         run: docker build -t ${{secrets.DOCKER_USERNAME}}/yyy .    
+      - name: "push img"
+        run: docker push ${{secrets.DOCKER_USERNAME}}/yyy
     
 
 
